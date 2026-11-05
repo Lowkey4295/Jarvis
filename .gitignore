@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.DS_Store
+
+# LinkedIn manager: local working data and photos stay on your machine
+linkedin_manager/data/
+linkedin_manager/media/*
+!linkedin_manager/media/.gitkeep

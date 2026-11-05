@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LinkedIn Manager</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">J</span>
+      <div>
+        <h1>LinkedIn Manager</h1>
+        <p class="muted">Jarvis · local drafts</p>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span id="save-state" class="muted" aria-live="polite"></span>
+      <button id="new-post" class="btn primary" type="button">+ New post</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <!-- Post list -->
+    <aside class="panel list-panel" aria-label="Posts">
+      <input id="search" class="input" type="search" placeholder="Search posts…" aria-label="Search posts">
+      <ul id="post-list" class="post-list"></ul>
+    </aside>
+
+    <!-- Editor -->
+    <section class="panel editor-panel" aria-label="Editor">
+      <div id="empty" class="empty" hidden>
+        <p>No posts yet.</p>
+        <button class="btn primary" type="button" data-action="new">Create your first post</button>
+      </div>
+
+      <form id="editor" autocomplete="off" hidden>
+        <div class="field">
+          <label for="f-title">Title <span class="muted">(only for you)</span></label>
+          <input id="f-title" class="input" type="text">
+        </div>
+
+        <div class="row">
+          <div class="field grow">
+            <label for="f-status">Status</label>
+            <select id="f-status" class="input">
+              <option value="draft">Draft</option>
+              <option value="ready">Ready to post</option>
+              <option value="posted">Posted</option>
+            </select>
+          </div>
+          <div class="row-buttons">
+            <button id="duplicate" class="btn" type="button">Duplicate</button>
+            <button id="delete" class="btn danger" type="button">Delete</button>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="f-body">Post text</label>
+          <textarea id="f-body" class="input body-input" rows="18" spellcheck="true"></textarea>
+        </div>
+
+        <div class="field">
+          <label for="f-hashtags">Hashtags <span class="muted">(3–5 works best)</span></label>
+          <input id="f-hashtags" class="input" type="text" placeholder="#ChildhoodCancerAwareness #Volunteering">
+        </div>
+
+        <div id="stats" class="stats" aria-live="polite"></div>
+
+        <div class="field">
+          <span class="label">Photos <span class="muted">(click to add or remove · order = click order)</span></span>
+          <label id="dropzone" class="dropzone" for="file-input">
+            <input id="file-input" type="file" accept="image/*" multiple hidden>
+            <strong>Drop photos here</strong> or click to choose from your Mac
+          </label>
+          <div id="media-grid" class="media-grid"></div>
+        </div>
+
+        <div class="field">
+          <label for="f-notes">Notes, checklist &amp; first comment</label>
+          <textarea id="f-notes" class="input" rows="10"></textarea>
+        </div>
+      </form>
+    </section>
+
+    <!-- Preview -->
+    <section class="panel preview-panel" aria-label="Preview">
+      <div class="preview-head">
+        <h2>Preview</h2>
+        <span class="muted small">Approximate feed view</span>
+      </div>
+
+      <article class="pv-card">
+        <header class="pv-author">
+          <span id="pv-avatar" class="avatar" aria-hidden="true">Y</span>
+          <div class="pv-author-text">
+            <input id="pv-name" class="ghost-input strong" type="text" value="Your Name" aria-label="Your name">
+            <input id="pv-headline" class="ghost-input muted small" type="text" value="Your headline" aria-label="Your headline">
+            <span class="muted small">Now · 🌐</span>
+          </div>
+        </header>
+        <div id="pv-text" class="pv-text"></div>
+        <div id="pv-media" class="pv-media"></div>
+        <footer class="pv-actions muted small">
+          <span>👍 Like</span><span>💬 Comment</span><span>🔁 Repost</span><span>✉️ Send</span>
+        </footer>
+      </article>
+
+      <div class="preview-buttons">
+        <button id="copy" class="btn primary" type="button">Copy post text</button>
+        <button id="mark-posted" class="btn" type="button">Mark as posted</button>
+      </div>
+      <p class="muted small">Copy the text, open LinkedIn, start a post, paste, then add the selected photos in the same order.</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" hidden></div>
+  <script src="/app.js"></script>
+</body>
+</html>
