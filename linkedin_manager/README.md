@@ -15,7 +15,18 @@ git checkout ccr-e0601ad8-wm7rem
 python3 linkedin_manager/server.py --open
 ```
 
-The app opens at <http://localhost:8000>. Press `Ctrl+C` in the terminal to stop
+No git? Download and run it in one line instead:
+
+```bash
+cd ~/Desktop && curl -L -o jarvis.zip https://github.com/lowkey4295/jarvis/archive/refs/heads/ccr-e0601ad8-wm7rem.zip && unzip -oq jarvis.zip && cd jarvis-ccr-e0601ad8-wm7rem && python3 linkedin_manager/server.py --open
+```
+
+If macOS asks to install "command line developer tools", click Install, wait for
+it to finish, then run the command again.
+
+The app opens at <http://localhost:8000>. `localhost` means "this computer", so
+open that address on the Mac that is running the server. On a phone it won't
+load. Press `Ctrl+C` in the terminal to stop
 it. If port 8000 is busy, add `--port 8080`.
 
 ## Using it
