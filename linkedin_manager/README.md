@@ -18,7 +18,7 @@ python3 linkedin_manager/server.py --open
 No git? Download and run it in one line instead:
 
 ```bash
-cd ~/Desktop && curl -L -o jarvis.zip https://github.com/lowkey4295/jarvis/archive/refs/heads/ccr-e0601ad8-wm7rem.zip && unzip -oq jarvis.zip && cd jarvis-ccr-e0601ad8-wm7rem && python3 linkedin_manager/server.py --open
+cd ~/Desktop && curl -L -o jarvis.zip https://github.com/lowkey4295/jarvis/archive/refs/heads/ccr-e0601ad8-wm7rem.zip && unzip -oq jarvis.zip && cd Jarvis-ccr-e0601ad8-wm7rem && python3 linkedin_manager/server.py --open
 ```
 
 If macOS asks to install "command line developer tools", click Install, wait for
